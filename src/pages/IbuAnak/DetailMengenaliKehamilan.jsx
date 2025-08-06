@@ -1,6 +1,6 @@
 import FooterComp from "../../components/FooterComp";
 import Header from "../../components/Header";
-import DetailMengenaliKehamilan from "../../components/Ibu&Anak/kehamilan/DetailMengenaliKehamilan";
+import DetailMengenaliKehamilan from "../../components/IbuAnak/kehamilan/DetailMengenaliKehamilan";
 
 const HomeMotherChild = () => {
   return (

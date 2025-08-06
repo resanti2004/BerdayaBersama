@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../../components/Header";
-import InformasiTerkait from "../../components/Ibu&Anak/InformasiTerkait";
-import AksiNyata from "../../components/Ibu&Anak/AksiNyata";
-import WebsiteTerkait from "../../components/Ibu&Anak/WebsiteTerkait";
+// import InformasiTerkait from "../../components/Ibu&Anak/InformasiTerkait";
+import AksiNyata from "../../components/IbuAnak/AksiNyata";
+import WebsiteTerkait from "../../components/IbuAnak/WebsiteTerkait";
 import FooterComp from "../../components/FooterComp";
 // import ListMotherChild from "./ListMotherChild";
-import PilihInformasiKehamilan from "../../components/Ibu&Anak/PilihInformasiKehamilan";
-import VideoTerkait from "../../components/Ibu&Anak/VideoTerkait";
+import PilihInformasiKehamilan from "../../components/IbuAnak/PilihInformasiKehamilan";
+import VideoTerkait from "../../components/IbuAnak/VideoTerkait";
 
 const HomeMotherChild = () => {
   return (

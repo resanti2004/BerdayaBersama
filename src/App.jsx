@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import HomeMotherChild from "./pages/IbuAnak/HomeMotherChild";
 // import ListMotherChild from "./pages/Ibu&Anak/ListMotherChild";
 // import PilihInformasiKehamilan from "./components/Ibu&Anak/PilihInformasiKehamilan";
-import DetailMengenaliKehamilan from "./components/IbuAnak/Kehamilan/DetailMengenaliKehamilan";
+import DetailMengenaliKehamilan from "./components/IbuAnak/kehamilan/DetailMengenaliKehamilan";
 import DetailMakananNutrisi from "./components/IbuAnak/kehamilan/DetailMakananNutrisi";
 import DetailTahapanTrimester from "./components/IbuAnak/kehamilan/DetailTahapanTrimester";
 import DetailPemeriksaanPerawatan from "./components/IbuAnak/kehamilan/DetailPemeriksaanPerawatan";

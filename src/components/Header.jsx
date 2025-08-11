@@ -26,7 +26,7 @@ const Header = () => {
         {/* LOGO */}
         <Link to="/" className="flex items-center space-x-1">
           <img src={Logo} className="h-9" alt="Logo" />
-          <span className="self-center text-2xl font-semibold">
+          <span className="self-center text-2xl font-semibold text-gray-600">
             BerdayaBersama
           </span>
         </Link>

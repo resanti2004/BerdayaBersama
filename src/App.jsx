@@ -32,7 +32,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className="min-h-screen mb-64 overflow-y-auto">
+      <div className="min-h-screen mb-10 overflow-y-auto overflow-x-hidden">
         <Routes>
           <Route path="/beranda-germas" element={<HomeGermas />} />
           <Route path="/beranda-ibu-dan-anak" element={<HomeMotherChild />} />

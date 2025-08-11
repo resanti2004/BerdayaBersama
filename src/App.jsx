@@ -1,12 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Header from "./components/Header";
 import HomeMotherChild from "./pages/IbuAnak/HomeMotherChild";
-// import ListMotherChild from "./pages/Ibu&Anak/ListMotherChild";
-// import PilihInformasiKehamilan from "./components/Ibu&Anak/PilihInformasiKehamilan";
 import DetailMengenaliKehamilan from "./components/IbuAnak/kehamilan/DetailMengenaliKehamilan";
 import DetailMakananNutrisi from "./components/IbuAnak/kehamilan/DetailMakananNutrisi";
 import DetailTahapanTrimester from "./components/IbuAnak/kehamilan/DetailTahapanTrimester";
@@ -16,19 +12,45 @@ import DetailTandaBahayaSaatHamil from "./components/IbuAnak/kehamilan/DetailTan
 import HomeGermas from "./pages/IbuAnak/HomeGermas";
 import HomeSampah from "./pages/IbuAnak/HomeSampah";
 import Home from "./pages/home";
-// import ListMelahirkan from "./pages/Ibu&Anak/ListMelahirkan";
-// import ListParenting from "./pages/Ibu&Anak/ListParenting";
-// import ListKesehatan from "./pages/Ibu&Anak/ListKesehatan";
-// import DetailPersiapanMelahirkan from "./components/Ibu&Anak/Melahirkan/DetailPersiapanMelahirkan";
-// import DetailTandaPersalinan from "./components/Ibu&Anak/Melahirkan/DetailTandaPersalinan";
-// import DetailProsesPersalinan from "./components/Ibu&Anak/Melahirkan/DetailProsesPersalinan";
-// import DetailPerawatanPascaMelahirkan from "./components/Ibu&Anak/Melahirkan/DetailPerawatanPascaMelahirkan";
-// import DetailPenyusuan from "./components/Ibu&Anak/Melahirkan/DetailPenyusuan";
-// import DetailKesehatanMentalIbu from "./components/Ibu&Anak/Melahirkan/DetailKesehatanMentalIbu";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isMobile, setIsMobile] = useState(true);
 
+  useEffect(() => {
+    const checkMobile =
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    setIsMobile(checkMobile);
+  }, []);
+
+  // Jika bukan mobile, tampilkan overlay peringatan
+  if (!isMobile) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-red-100 text-red-800 px-6 text-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-16 h-16 mb-4 text-red-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 9v2m0 4h.01M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"
+          />
+        </svg>
+        <h1 className="text-2xl font-bold mb-2">Akses Hanya untuk Mobile</h1>
+        <p className="text-lg">
+          Mohon buka website ini di perangkat HP untuk pengalaman terbaik 📱
+        </p>
+      </div>
+    );
+  }
+
+  // Jika mobile, render aplikasi normal
   return (
     <Router>
       <Header />
@@ -38,10 +60,6 @@ function App() {
           <Route path="/beranda-ibu-dan-anak" element={<HomeMotherChild />} />
           <Route path="/beranda-lingkungan" element={<HomeSampah />} />
           <Route path="/" element={<Home />} />
-          {/* <Route path="/kehamilan" element={<ListMotherChild />} /> */}
-          {/* <Route path="/melahirkan-masa-nifas" element={<ListMelahirkan />} />
-          <Route path="/perawatan-bayi" element={<ListParenting />} />
-          <Route path="/kesehatan-ibu-anak" element={<ListKesehatan />} /> */}
 
           {/* KEHAMILAN */}
           <Route
@@ -68,32 +86,6 @@ function App() {
             path="/kehamilan/tanda-bahaya"
             element={<DetailTandaBahayaSaatHamil />}
           />
-
-          {/* MELAHIRKAN */}
-          {/* <Route
-            path="/melahirkan-masa-nifas/persiapan-melahirkan"
-            element={<DetailPersiapanMelahirkan />}
-          />
-          <Route
-            path="/melahirkan-masa-nifas/tanda-tanda-persalinan"
-            element={<DetailTandaPersalinan />}
-          />
-          <Route
-            path="/melahirkan-masa-nifas/proses-persalinan"
-            element={<DetailProsesPersalinan />}
-          />
-          <Route
-            path="/melahirkan-masa-nifas/perawatan-pasca-melahirkan"
-            element={<DetailPerawatanPascaMelahirkan />}
-          />
-          <Route
-            path="/melahirkan-masa-nifas/penyusuan-dan-perawatan-bayi"
-            element={<DetailPenyusuan />}
-          />
-          <Route
-            path="/melahirkan-masa-nifas/kesehatan-mental-ibu"
-            element={<DetailKesehatanMentalIbu />}
-          /> */}
         </Routes>
       </div>
     </Router>

@@ -71,8 +71,8 @@ const Header = () => {
                   onClick={() => setMenuOpen(false)} // Close mobile menu when link is clicked
                   className={`block py-2 px-3 rounded-sm md:p-0 capitalize transition-colors duration-200 ${
                     isActive(item.path)
-                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-white md:dark:text-blue-500"
-                      : "text-gray-900 hover:bg-gray-100 dark:text-white md:hover:text-blue-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent hover:text-blue-600"
+                      ? "text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                      : "text-gray-900 hover:bg-gray-100 md:hover:text-blue-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent hover:text-blue-600"
                   }`}
                 >
                   {item.name}
